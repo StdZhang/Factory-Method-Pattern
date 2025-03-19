@@ -1,0 +1,3 @@
+D:/Users/z/shejimoshi2/cmake-build-debug/CMakeFiles/shejimoshi2.dir
+D:/Users/z/shejimoshi2/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Users/z/shejimoshi2/cmake-build-debug/CMakeFiles/rebuild_cache.dir

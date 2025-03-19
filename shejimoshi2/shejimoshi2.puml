@@ -1,0 +1,30 @@
+@startuml
+
+class ImageReader {
+  -virtual void read(const string& filePath) = 0
+  -virtual ~ImageReader() = default
+}
+
+class GifReader {
+  +void read(const string& filePath) override
+}
+
+class JpgReader {
+  +void read(const string& filePath) override
+}
+
+class ImageReaderFactory {
+  -virtual unique_ptr<ImageReader> createReader(const std::string& type) = 0
+  -virtual ~ImageReaderFactory() = default
+}
+
+class ConcreteImageReaderFactory {
+  +unique_ptr<ImageReader> createReader(const string& type) override
+}
+
+ImageReader <|-- GifReader
+ImageReader <|-- JpgReader
+
+ImageReaderFactory <|-- ConcreteImageReaderFactory
+
+@enduml
