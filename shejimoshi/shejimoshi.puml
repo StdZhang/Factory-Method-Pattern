@@ -1,0 +1,39 @@
+@startuml
+
+class Shape {
+  -virtual ~Shape()
+  -virtual void draw() const = 0
+  -virtual void erase() const = 0
+}
+
+class Circle {
+  +void draw() const override
+  +void erase() const override
+}
+
+class Rectangle {
+  +void draw() const override
+  +void erase() const override
+}
+
+class Square {
+  +void draw() const override
+  +void erase() const override
+}
+
+class ShapeFactory {
+  -virtual ~ShapeFactory()
+  -virtual unique_ptr<Shape> createShape(const string& shapeType) const = 0
+}
+
+class ConcreteShapeFactory {
+  +unique_ptr<Shape> createShape(const string& shapeType) const override
+}
+
+Shape <|-- Circle
+Shape <|-- Rectangle
+Shape <|-- Square
+
+ShapeFactory <|-- ConcreteShapeFactory
+
+@enduml
